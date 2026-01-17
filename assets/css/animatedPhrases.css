@@ -1,0 +1,78 @@
+.phrasesDiv {
+  height: 60vh;
+  background-color: black;
+  color: #f3f3f4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  white-space: nowrap;
+
+}
+
+.phrase-one {
+  font-size: 6rem;
+}
+
+.phrase-two {
+  font-size: 3rem;
+}
+
+@media (max-width: 1360px) {
+  .phrasesDiv {
+    height: 50vh;
+  }
+
+  .phrase-one {
+    font-size: 4.5rem;
+  }
+  .phrase-two {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .phrasesDiv {
+    height: 30vh;
+  }
+
+  .phrase-one {
+    font-size: 3rem;
+  }
+  .phrase-two {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 630px) {
+  .phrasesDiv {
+    height: 30vh;
+  }
+
+  .phrase-one {
+    font-size: 2.5rem;
+  }
+  .phrase-two {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media (max-width: 492px) {
+  .phrase-one {
+    font-size: 2rem;
+  }
+  .phrase-two {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .phrase-one {
+    font-size: 1.8rem;
+  }
+  .phrase-two {
+    font-size: 0.8rem;
+  }
+}

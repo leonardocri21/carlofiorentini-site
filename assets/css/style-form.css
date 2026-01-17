@@ -1,0 +1,421 @@
+:root {
+  --red: #990606;
+  --white: #f3f3f4;
+
+  --redGrey: #990606;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--white);
+}
+
+.multisteps-form__content{
+  font-family: "Lato", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.multisteps-form__progress {
+  cursor: default !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.navigationButtons{
+  position: absolute;
+  bottom: 0 !important;
+  width: 90%;
+  padding: 2rem 3rem; /* Adjust this as needed for spacing */
+}
+
+.btnNext {
+  color: var(--white);
+  background-color: #990606;
+
+  font-size: 1.5rem;
+  width: 7rem;
+  height: 3rem;
+
+
+  border: none;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+}
+
+.btnNext:hover {
+  color: var(--red);
+  background-color: var(--white);
+  border: 1px solid var(--red);
+}
+
+.btnPrev {
+  color: var(--white);
+  background-color: var(--red);
+
+  font-size: 1.5rem;
+  width: 7rem;
+  height: 3rem;
+
+  border: none;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+}
+
+.btnPrev:hover {
+  color: var(--red);
+  background-color: var(--white);
+  border: 1px solid var(--red);
+}
+
+.multisteps-form__progress-btn {
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  position: relative;
+  padding-top: 20px;
+  color: rgba(108, 117, 125, 0.7);
+  text-indent: -9999px;
+  border: none;
+  background-color: transparent;
+  outline: none !important;
+  font-size: 1rem;
+}
+
+.rivediPacks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 15px;
+  flex-grow: 1;
+  /* Rounded corners */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: black;
+  background-color: #f7e1e2;
+  transition: all 0.3s ease;
+}
+
+.rivediPacks:hover {
+  background-color: var(--red);
+  /* Light red background on hover */
+  color: white;
+}
+
+@media (min-width: 340px) {
+  .multisteps-form__progress-btn {
+    text-indent: 0;
+  }
+}
+
+.multisteps-form__progress-btn:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 13px;
+  height: 13px;
+  content: '';
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: all 0.15s linear 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.multisteps-form__progress-btn:after {
+  position: absolute;
+  top: 5px;
+  left: calc(-50% - 13px / 2);
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: currentColor;
+  z-index: 1;
+}
+
+.multisteps-form__progress-btn:first-child:after {
+  display: none;
+}
+
+.multisteps-form__progress-btn.js-active {
+  color: var(--red);
+}
+
+.multisteps-form__progress-btn.js-active:before {
+  -webkit-transform: translateX(-50%) scale(1.2);
+  transform: translateX(-50%) scale(1.2);
+  background-color: currentColor;
+}
+
+.multisteps-form__form {
+  position: relative;
+  height: 80vh;
+}
+
+.multisteps-form__panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.multisteps-form__panel.js-active {
+  height: 80vh;
+  opacity: 1;
+  visibility: visible;
+}
+
+.multisteps-form__panel[data-animation="scaleIn"] {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.multisteps-form__panel[data-animation="scaleIn"].js-active {
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.multisteps-form__title {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+
+  font-family: "Raleway", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Spacing between buttons */
+  max-width: 300px;
+  margin: auto;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #990606;
+  /* Border color */
+  border-radius: 25px;
+  /* Rounded corners */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.radio-group label:hover {
+  background-color: #f7e1e2;
+  /* Light red background on hover */
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+  /* Hide the default radio button */
+}
+
+.radio-group input[type="radio"]:checked+label {
+
+  color: white;
+  /* White text for selected button */
+  background-color: #990606;
+
+}
+
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* Spacing between buttons */
+  max-width: 300px;
+  margin: auto;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #990606;
+  /* Border color */
+  border-radius: 25px;
+  /* Rounded corners */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.checkbox-group label:hover {
+  background-color: #f7e1e2;
+  /* Light red background on hover */
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: none;
+  /* Hide the default radio button */
+}
+
+.checkbox-group input[type="checkbox"]:checked+label {
+
+  color: white;
+  /* White text for selected button */
+  background-color: #990606;
+
+}
+
+
+
+/* Progress bar for user info sub-steps */
+.sub-progress-bar {
+  margin-top: 20px;
+}
+
+.sub-progress-bar .progress {
+  height: 6px;
+}
+
+.sub-progress-bar .progress-bar {
+  background-color: var(--red);
+}
+
+.form-label {
+  color: var(--red);
+}
+
+/* Stile della modale */
+.modal {
+  display: none;
+  /* La modale è nascosta per impostazione predefinita */
+  position: fixed;
+  z-index: 1;
+  /* Assicurati che la modale si sovrapponga al contenuto */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  font-family: "Lato", serif;
+}
+
+/* Contenuto della modale */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--red);
+  width: 80%;
+  /* Puoi regolare la larghezza della modale */
+  max-width: 500px;
+  /* Limite alla larghezza */
+  border-radius: 2rem;
+}
+
+/* Pulsante di chiusura della modale */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+}
+
+/* Cambia colore al passaggio del mouse sopra il pulsante di chiusura */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Stile per il campo di input nella modale */
+.custom-text {
+  width: 100%;
+  height: 100px; /* Adjust height as needed */
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5; /* Improve readability */
+  resize: vertical; /* Allow resizing only vertically */
+  overflow-y: auto; /* Add vertical scrolling when overflowing */
+  background: linear-gradient(135deg, #f5f7fa, #e3e6e8); /* Fancy background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+}
+
+#custom-text:focus {
+  border-color: var(--red); /* Change border color on focus */
+  box-shadow: 0 0 5px var(--red); /* Add glow effect */
+  outline: none; /* Remove default focus outline */
+}
+
+
+
+.backToForm {
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  cursor: pointer;
+}
+.paneGeneralInfo{
+  height: 100vh !important;
+}
+
+@media (max-width: 900px) {
+  .paneGeneralInfo{
+    height: 120vh !important;
+  }
+}
+
+@media (max-height: 787px){
+  .paneGeneralInfo{
+    height: 120vh !important;
+  }  
+}
+  
+@media (max-height: 653px){
+  .paneGeneralInfo{
+    height: 150vh !important;
+  }  
+}
+  

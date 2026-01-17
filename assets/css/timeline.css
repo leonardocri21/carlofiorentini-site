@@ -1,0 +1,159 @@
+.containerTimeline {
+    display: flex;
+    /* Layout del contenitore: Flexbox */
+    width: 1300px;
+    /* Larghezza del contenuto: 1300px (Boxed) */
+    flex-direction: row;
+    /* Direzione degli elementi: orizzontale */
+    align-items: center;
+    /* Allinea elementi: centrato verticalmente (modificabile in 'flex-start', 'flex-end' ecc.) */
+    gap: 0;
+    /* Spaziatura tra gli elementi: 20px per riga e colonna */
+    padding: 0;
+}
+
+.dm-timeline-point {
+    position: sticky;
+    top: 50vh;
+
+}
+
+.dm-timeline-bar {
+    transform: translateX(29px);
+}
+
+.dm-timeline-left {
+
+    position: sticky;
+    top: 70%;
+    padding-right: 5rem;
+    transform: translateY(-12rem);
+}
+
+/*Change Line Background Color Here*/
+.dm-progress-bar {
+
+    background: red;
+    height: 0%;
+
+}
+
+
+.dm-bar-container {
+
+    position: absolute;
+    left: calc(50% - 10%/2);
+    height: 100%;
+}
+
+.textDescription {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #f3f3f4;
+    margin-bottom: 1rem;
+}
+
+.timelineTitle_Top {
+    font-size: 2rem;
+    color: #f3f3f4;
+    display: none;
+}
+
+.svgSize {
+    width: 7rem;
+    margin-bottom: 3rem;
+}
+
+.btn-inizia{
+    color: #f3f3f4;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: 1px solid #f3f3f4 !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-inizia:hover{
+    background-color: #f3f3f4;
+    color: #990606;
+    text-decoration: none;
+}
+
+.container-questionario{
+    text-align: center;
+    width: 45%;
+    border: 2px solid black;
+    background-color: #990606;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+/* Mattia - Padding01 */
+.rightTimeline{
+    text-align: center;
+    width: 45%;
+    border: 2px solid #990606;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/*Tablet settings for middle container*/
+@media(max-width:1024px) {
+
+
+    .dm-bar-container {
+
+        position: absolute;
+        left: calc(50% - 10%/2);
+        height: 100%;
+
+    }
+}
+
+
+/*Mobile settings for middle container*/
+@media(max-width:768px) {
+
+
+    .dm-bar-container {
+
+        position: absolute;
+        left: 0%;
+        /*Make left:auto and add right:0%; to make the line on right side*/
+        height: 100%;
+    }
+
+    .svgSize {
+        width: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .textDescription {
+        font-size: 1rem;
+    }
+
+    .rightTimeline{
+        width: 70%;
+    }
+}
+
+@media (max-width: 678px){
+    .container-questionario{
+        width: 65%;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    .btn-inizia{
+        background-color: #990606;
+        color: white;
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+}

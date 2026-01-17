@@ -1,0 +1,572 @@
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #990606;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #990606;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+/* UNCOMMENT THIS TO MAKE THE UNDERLINE ANIMATION ON HOVER FIXED
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+ */
+
+.underline-fixed::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #990606;
+    transform-origin: bottom right;
+    transform: scaleX(1);
+    /* Mantiene la sottolineatura fissa */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Footer styles */
+.footerText {
+    white-space: nowrap;
+    font-size: 2rem;
+    color: #f3f3f4;
+}
+
+.footerText:hover {
+    font-style: bold;
+    text-decoration: none !important;
+    color: #990606 !important;
+    transition: all 0.3s;
+}
+
+/* FOOTER FIXED DOWN IN THE SCREEN
+
+ #footerCustom * {
+    background-color: inherit;
+}
+
+#footerCustom {
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000; 
+
+    margin-bottom: -5rem !important;
+    padding-bottom: 0 !important;
+} 
+*/
+
+#footerCustom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: auto !important;
+}
+
+.footerTextDiv {
+    bottom: 0;
+    margin-bottom: 5rem;
+    position: absolute;
+    flex: 1;
+    text-align: center;
+}
+
+
+.title {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+
+    /* Adjust the breakpoint as needed */
+    .title {
+        font-size: 3rem;
+    }
+}
+
+/* Navbar styles */
+.navbar-light .navbar-nav .nav-link {
+    color: #f3f3f4 !important;
+    font-size: 2.5rem;
+}
+
+.custom-link {
+    font-size: 2rem;
+    color: #5c5c5c;
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    font-style: bold;
+    transition: all 0.5s;
+}
+
+/* Remove border from toggler */
+.navbar-toggler {
+    border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+
+/* Toggler icon styles */
+.toggler-icon {
+    width: 3rem;
+    height: 5px;
+    background-color: #f3f3f4;
+    display: block;
+    transition: all 0.5s;
+}
+
+/* Adds space between the lines */
+.middle-bar {
+    margin: 5px auto;
+}
+
+/* State when navbar is opened */
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+
+/* State when navbar is collapsed */
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+
+/* Color of toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #f3f3f4;
+}
+
+.back-img {
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%),
+        url('../img/IMMAGINE-COPERTINA.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s;
+}
+
+/* Hero section text */
+.heroTextDiv {
+    transition: all 0.3s;
+    z-index: 2 !important;
+    max-width: 100%;
+    text-align: center;
+    background-color: #990606;
+
+    position: absolute;
+    bottom: 10rem;
+
+}
+
+.heroText {
+    color: #f3f3f4;
+    font-size: 8rem;
+    line-height: 0.9;
+    margin-top: 4rem;
+    transition: all 0.3s;
+}
+
+.subHeroText {
+    color: #f3f3f4;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+
+/* Section styles */
+.section {
+    min-height: 100vh !important;
+    height: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+
+/* Ensures the arrow container sticks to the bottom of the page */
+.arrow-container {
+    background-color: transparent;
+    /* Arrow container background color */
+    position: absolute;
+    /* Stays at the bottom of the viewport */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    /* Height of the arrow section */
+    overflow: hidden;
+    /* Ensures no content spills out */
+}
+
+/* The actual arrow */
+.arrow1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    clip-path: polygon(0% 100%, 50% 100%, 0% 0%);
+    /*Creates the triangle shape */
+    background-color: #f3f3f4;
+    /* Arrow color */
+    color: black;
+}
+
+.arrow2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    clip-path: polygon(100% 0%, 50% 100%, 100% 100%);
+    /*clip-path: polygon(0% 100%, 50% 100%, 0% 0%);     Creates the triangle shape */
+    background-color: #f3f3f4;
+    /* Arrow color */
+    color: black;
+}
+
+
+
+/* Ensures the arrow container sticks to the bottom of the page */
+.arrow-container-white {
+    background-color: black;
+    /* Arrow container background color */
+    width: 100%;
+    height: 5rem;
+    /* Height of the arrow section */
+    overflow: hidden;
+    /* Ensures no content spills out */
+}
+
+/* The actual arrow */
+.arrow-white {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    clip-path: polygon(50% 100%, 100% 0, 0 0);
+    /* Creates the triangle shape */
+    background-color: #f3f3f4;
+    /* Arrow color */
+    color: black;
+}
+
+
+
+
+/**************************** MANAGING MEDIA QUERIES *****************************/
+
+@media (max-height: 680px) {
+    .heroText {
+        font-size: 4rem !important;
+        line-height: 0.9;
+        margin-top: 1rem !important;
+    }
+
+    .heroTextProducts {
+        font-size: 2rem !important;
+        line-height: 0.9;
+        margin-top: 0 !important;
+    }
+
+    .subHeroText {
+        font-size: 1rem !important;
+    }
+
+}
+
+@media (max-height: 830px) {
+    .heroTextProducts {
+        margin-top: 15rem !important;
+    }
+
+}
+
+@media (max-width: 1480px),
+(max-height: 900px) {
+    .heroText {
+        font-size: 7rem;
+        margin-top: 3rem;
+    }
+
+    .paddingSec0 {
+        padding-top: 8rem;
+    }
+
+
+    /* Handling Footer (SECTION 05) */
+
+    .footerBackSize {
+        font-size: 3rem;
+    }
+
+    .footerTitleTextSize {
+        font-size: 2rem;
+    }
+
+    .footerTextSize {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+
+    .footerLinkSize {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        transition: ease all 0.7s;
+        text-align: center;
+        margin: 0 !important;
+        text-decoration: underline;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 7rem;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+        /* Spazio verticale tra i link */
+    }
+
+    .nav-link {
+        transition: ease all 1s;
+        font-size: 2rem !important;
+        border-radius: 0.5rem;
+    }
+
+    .footerTextDiv {
+        margin-top: 7rem;
+    }
+
+    .heroText {
+        font-size: 6.5rem;
+    }
+
+}
+
+/* Max width 991px  (MOBILE) */
+@media (max-width: 991px),
+(max-height: 740px) {
+
+    .nav-link {
+        font-size: 1.5rem !important;
+    }
+
+    .subHeroText {
+        font-size: 1rem;
+    }
+
+    #companyLogo {
+        width: 150px;
+        transition: ease all 0.3s;
+    }
+
+    /* Handling Footer (SECTION 05) */
+
+    .footerBackSize {
+        font-size: 2.5rem;
+        padding-left: 0;
+    }
+
+    .footerImg {
+        width: 9rem;
+    }
+
+    .footerTitleTextSize {
+        font-size: 2rem;
+    }
+
+    .footerTextSize {
+        font-size: 1.3rem;
+        margin-top: 0.5rem !important;
+    }
+
+    .footerLinkSize {
+        font-size: 1rem;
+    }
+
+}
+
+/* Max width 767px */
+@media (max-width: 767px),
+(max-height: 600px) {
+    #companyLogo {
+        margin-left: 0rem !important;
+        width: 140px;
+    }
+
+    .heroText {
+        font-size: 5rem;
+        line-height: 1.3;
+        margin-top: 5rem;
+    }
+
+    .bigTextSection0 {
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
+
+    .footerText {
+        font-size: 1.5rem;
+    }
+
+    /* Handling Footer (SECTION 05) */
+
+    .footerBackSize {
+        font-size: 2.5rem;
+        padding-left: 0;
+    }
+
+    .footerImg {
+        width: 9rem;
+    }
+
+    .footerTitleTextSize {
+        font-size: 2rem;
+    }
+
+    .footerTextSize {
+        font-size: 1.3rem;
+        margin-top: 2rem;
+        text-align: center !important;
+    }
+
+    .footerLinkSize {
+        font-size: 1rem;
+        padding: 0px;
+    }
+
+}
+
+@media (max-height: 650px) {
+    .heroTextProducts {
+        margin-top: 10rem !important;
+    }
+
+}
+
+@media (max-height: 600px) {
+    .heroTextProducts {
+        font-size: 2rem !important;
+        margin-top: 8rem !important;
+    }
+
+}
+
+/* Max width 492px  (IPHONE X) */
+@media (max-width: 492px),
+(max-height: 400px) {
+    .heroText {
+        font-size: 4.5rem;
+    }
+
+    .heroTextDiv {
+        margin-top: 1rem;
+    }
+
+    #companyLogo {
+        width: 130px;
+    }
+
+    .footerText {
+        font-size: 1.3rem;
+    }
+
+    .metric {
+        font-size: 2.5rem;
+        margin-top: 1.2rem;
+    }
+
+    .metric-text {
+        font-size: 1rem;
+    }
+}
+
+
+/* Optional styling for responsiveness (if needed) */
+@media (max-width: 768px) {
+    .arrow-container {
+        height: 4rem;
+        /* Adjust height for smaller screens */
+    }
+}
+
+
+/* Optional styling for responsiveness (if needed) */
+@media (max-width: 768px) {
+    .arrow-container-white {
+        height: 4rem;
+        /* Adjust height for smaller screens */
+    }
+}

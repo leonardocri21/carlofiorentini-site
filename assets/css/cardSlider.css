@@ -1,0 +1,247 @@
+/* Importing Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containerSwiper {
+  max-width: 80%;
+}
+
+.divCards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f3f4;
+  transition: 0.2s ease all;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  max-width: none !important;
+  margin: 0 70px 55px;
+  transition: 0.2s ease all;
+}
+
+.motivationalPhrase {
+  color: black;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.2s ease all;
+  margin-top: 2rem;
+  border-top: 2px solid #990606;
+  border-bottom: 2px solid #990606;
+  padding: 10px;
+  /* Adjust padding as needed */
+}
+
+.motivationalPhrase2 {
+  color: #990606;
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  transition: 0.2s ease all;
+}
+
+.card-list .card-item {
+  height: 35rem;
+  color: #f3f3f4;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(30px);
+  /* for iOS Safari */
+  backdrop-filter: blur(30px);
+  background: #990606;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transition: 0.2s ease all;
+}
+
+.card-list .card-item .user-image {
+  width: 400px !important;
+  height: 400px !important;
+  margin-bottom: 2rem;
+  transition: 0.2s ease all;
+
+  padding: 1rem;
+}
+
+.card-list .card-item .user-profession {
+  font-size: 1.15rem;
+  color: #e3e3e3;
+  font-weight: 500;
+  transition: 0.2s ease all;
+  margin-bottom: 1rem;
+
+}
+
+.card-list .card-item .message-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #f3f3f4;
+  color: #f3f3f4;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+  background: #990606;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+  color: #990606;
+  margin-top: 4rem;
+  transition: 0.2s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+  color: #990606;
+}
+
+
+.btn-scopri {
+  text-decoration: none;
+  color: #990606;
+  border: 2px solid #f3f3f4;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-scopri:hover {
+  background-color: #f3f3f4;
+  color: #990606;
+}
+
+@media (max-width: 1710px) {
+
+  .card-list .card-item .user-image {
+    width: 350px !important;
+    height: 350px !important;
+
+  }
+}
+
+@media (max-width: 1644px) {
+  .card-list .card-item {
+    padding: 25px;
+  }
+
+  .card-list .card-item .user-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .card-list .card-item .user-profession {
+    font-size: 1rem;
+  }
+
+  .card-list .card-item .message-button {
+    font-size: 1.15rem;
+    padding: 8px 30px;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .motivationalPhrase {
+    font-size: 1.5rem;
+  }
+
+  .motivationalPhrase2 {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+
+  .motivationalPhrase {
+    font-size: 1.3rem;
+  }
+
+  .motivationalPhrase2 {
+    font-size: 2rem;
+  }
+
+
+  .card-list .card-item {
+    height: 30rem;
+  }
+
+  .card-list .card-item .user-image {
+    width: 300px !important;
+    height: 300px !important;
+
+    padding: 0.5rem;
+  }
+
+}
+
+@media (max-width: 492px),
+(max-height: 400px) {
+
+  .containerSwiper {
+    max-width: 90%;
+  }
+
+
+  .card-list .card-item .user-image {
+    width: 300px !important;
+    height: 3000px !important;
+  }
+
+  .card-list .card-item {
+    padding: 20px !important;
+  }
+
+  .card-list .card-item .user-profession {
+    font-size: 0.9rem;
+  }
+
+  .card-list .card-item .message-button {
+    font-size: 1rem;
+    padding: 6px 25px;
+  }
+
+  .motivationalPhrase {
+    font-size: 1.1rem;
+  }
+
+  .motivationalPhrase2 {
+    font-size: 2rem;
+  }
+
+
+  .card-list .card-item {
+    height: 30rem;
+  }
+}
+
+@media (max-width: 370px) {
+
+  .motivationalPhrase {
+    font-size: 1rem;
+  }
+}
